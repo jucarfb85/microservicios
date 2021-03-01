@@ -11,12 +11,12 @@ import java.util.UUID;
 import javax.ws.rs.core.MediaType;
 
 @QuarkusTest
-public class GrpcResourceTest {
+class GrpcResourceTest {
 	
 	private UUID c1 = UUID.randomUUID();
 
     @Test
-    public void testHelloEndpoint() {
+    void testHelloEndpoint() {
         given()
           .when().get("/grpc")
           .then()

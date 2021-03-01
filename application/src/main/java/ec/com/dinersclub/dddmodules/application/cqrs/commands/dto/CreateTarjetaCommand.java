@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 
 public class CreateTarjetaCommand {
 	
-	//@Digits(integer = 3, fraction = 0)
+	
 	@NotBlank(message="id may not be blank")
 	private UUID id;
 	

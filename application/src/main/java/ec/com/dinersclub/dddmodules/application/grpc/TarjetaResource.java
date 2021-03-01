@@ -4,15 +4,11 @@ import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import javax.ws.rs.core.Response;
 
-import io.smallrye.common.annotation.Blocking;
-import io.smallrye.mutiny.Uni;
 import ec.com.dinersclub.dddmodules.application.cqrs.commands.ITarjetaCommandService;
 import ec.com.dinersclub.dddmodules.application.cqrs.commands.dto.CreateTarjetaCommand;
-import ec.com.dinersclub.dddmodules.application.grpc.MutinyTarjetaGrpc;
-import ec.com.dinersclub.dddmodules.application.grpc.TarjetaResponse;
-import ec.com.dinersclub.dddmodules.application.grpc.TarjetaRequest;
+import io.smallrye.common.annotation.Blocking;
+import io.smallrye.mutiny.Uni;
 
 
 @Singleton                                                                                   

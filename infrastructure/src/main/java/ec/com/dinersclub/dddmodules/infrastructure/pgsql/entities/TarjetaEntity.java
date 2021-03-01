@@ -21,6 +21,8 @@ public class TarjetaEntity extends PanacheEntityBase {
     private String numero;
     private String fecha;
     
+   
+    
     public TarjetaEntity() {
     }
     
@@ -39,11 +41,12 @@ public class TarjetaEntity extends PanacheEntityBase {
     }
     
     public static List<Tarjeta> map(List<TarjetaEntity> tarjetas) {
+    	 List<Tarjeta> tarjetaList = new ArrayList<>();
         if (tarjetas == null) {
-            return null;
+            return tarjetaList;
         }
 
-        List<Tarjeta> list = new ArrayList<Tarjeta>(tarjetas.size());
+        List<Tarjeta> list = new ArrayList<>(tarjetas.size());
         for (TarjetaEntity tarjeta : tarjetas) {
             list.add(tarjeta.toTarjeta());
         }

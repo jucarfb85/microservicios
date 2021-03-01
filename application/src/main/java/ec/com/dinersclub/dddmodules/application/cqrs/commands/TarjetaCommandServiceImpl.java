@@ -17,18 +17,20 @@ public class TarjetaCommandServiceImpl implements ITarjetaCommandService{
 	@Inject
 	IRepository repository;
 	
+	private Random r =new Random();
+	
 	
 	public void createTarjetaCommand(CreateTarjetaCommand command) {
 		Date fecha = new Date();
-		Random r = new Random();
+		
 		String random = r.nextInt(9999)+" "+r.nextInt(999999)+" "+r.nextInt(9999);
 		repository.createTarjeta(new Tarjeta(command.getId(),command.getNombre(),random, fecha.toString()));
-		//redisRepository.set(String.valueOf(command.getId()), command.getName());
+		
     }
 	
 	public void removeTarjetaCommand(UUID id) {
 		repository.deleteTarjeta(id);
-		//redisRepository.del(String.valueOf(id));
+		
     }
 	
 }

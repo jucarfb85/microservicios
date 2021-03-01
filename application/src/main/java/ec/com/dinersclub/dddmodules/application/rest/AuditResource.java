@@ -31,10 +31,10 @@ public class AuditResource {
     public Response add(@Valid CreateTarjetaCommand command) {
     	
     	Auditoria aud = new Auditoria();
-    	aud.microservice = microservice;
-    	aud.method = "POST";
-    	aud.request = "entrada";
-    	aud.response = "salida";
+    	aud.setMicroservice(microservice); 
+    	aud.setMethod("POST");
+    	aud.setRequest("entrada"); 
+    	aud.setResponse("salida");
     	
     	auditService.generateEventHandler(aud);
     	

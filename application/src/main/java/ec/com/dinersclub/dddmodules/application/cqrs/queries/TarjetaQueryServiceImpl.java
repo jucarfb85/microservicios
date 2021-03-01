@@ -21,11 +21,12 @@ public class TarjetaQueryServiceImpl implements ITarjetaQueryService{
     }
 	
     public List<TarjetaQuery> map(List<Tarjeta> tarjetas) {
+    	List<TarjetaQuery> tarjetaList = new ArrayList<>();
         if (tarjetas.isEmpty()) {
-            return null;
+            return tarjetaList;
         }
 
-        List<TarjetaQuery> list = new ArrayList<TarjetaQuery>(tarjetas.size());
+        List<TarjetaQuery> list = new ArrayList<>(tarjetas.size());
         for (Tarjeta tarjeta : tarjetas) {
             list.add(entityToDto(tarjeta));
         }

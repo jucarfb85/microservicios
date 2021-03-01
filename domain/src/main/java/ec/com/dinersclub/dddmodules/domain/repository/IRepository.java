@@ -15,10 +15,6 @@ public interface IRepository {
     
     void deleteTarjeta(UUID id);
     
-    void delCache(String key);
 
-    String getCache(String key);
-
-    void setCache(String key, String value);
 
 }

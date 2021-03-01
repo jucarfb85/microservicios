@@ -16,14 +16,14 @@ import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
 @QuarkusTestResource(H2DatabaseTestResource.class)
-public class TarjetaResourceTest {
+class TarjetaResourceTest {
 	
 	private UUID c1 = UUID.randomUUID();
 	private UUID c2 = UUID.randomUUID();
 	private UUID c3 = UUID.randomUUID();
 	
 	@Test
-    public void testAdd() {
+    void testAdd() {
         given()
                 .body("{\"id\": \""+c1.toString()+"\", \"nombre\": \"Cliente 1\"}")
                 .header("Content-Type", MediaType.APPLICATION_JSON)
@@ -50,7 +50,7 @@ public class TarjetaResourceTest {
     }
 
     @Test
-    public void testList() {
+    void testList() {
         given()
                 .when().get("/tarjetas")
                 .then()
@@ -60,7 +60,7 @@ public class TarjetaResourceTest {
     }
 
     @Test
-    public void testRemove() {
+    void testRemove() {
         given()
                 .header("Content-Type", MediaType.APPLICATION_JSON)
                 .when()
